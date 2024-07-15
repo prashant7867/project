@@ -1,13 +1,18 @@
-// require('dotenv').config({path:'./env'}) .. 
+ //require('dotenv').config({path:'./env'});
 import dotenv from " dotenv";// new methopd but can also be done by above line .
-import connectDB from "./db/index.js"
-dotenv.config(
-    {path:'./env'}
-)
+//import dotenv from "dotenv"
+import connectDB from "./db/index.js";
+import {app} from './app.js'
+dotenv.config({
+    path: './.env'
+})
+
+
+
 connectDB()
 .then(()=>{
     app.listen(process.env.PORT||8000,()=>{
-         console.log (`server is ruuning ar port ${process.env.PORT}`) 
+         console.log (`server is runing ar port ${process.env.PORT}`) 
     })
 })
 .catch((err)=>{
