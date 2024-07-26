@@ -1,6 +1,6 @@
 import {v2 as cloudinary} from "cloudinary"
 import fs from "fs"  //file system
-import { v2 as cloudinary } from 'cloudinary';
+//import {v2 as cloudinary } from 'cloudinary';
 
 // Configuration
 cloudinary.config({ 
@@ -17,7 +17,8 @@ cloudinary.config({
             resource_type:"auto"
            })
            //file has been uploaded successfull
-           console.log("file is uploaded on cloudinary", response.url);
+           //console.log("file is uploaded on cloudinary", response.url);
+           fs.unlinkSync(localFilePath)
            return response;
         }
         catch(error){

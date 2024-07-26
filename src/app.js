@@ -1,9 +1,10 @@
-import express from " express"
-import cors from " cors"
+import express from "express";
+import cors from "cors";
 import cookieParser from "cookie-parser"
 
 const app = express()
-app.use(cros({//.use is used for middleware
+app.use(cors({
+   //.use is used for middleware
    origin: process.env.CROS_ORIGIN,
    credentials: true
 }))
